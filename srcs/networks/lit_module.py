@@ -2,7 +2,6 @@ import pytorch_lightning as pl
 import torch.nn.functional as F
 from torchmetrics.classification import Accuracy
 import torch
-from transformers import get_cosine_schedule_with_warmup
 import numpy as np
 
 
@@ -78,14 +77,7 @@ class Model(pl.LightningModule):
                                   weight_decay=self.weight_decay)
 
         ret = {'optimizer': opt}
-        if self.lr_scheduler == "cosine_w_warmup":
-            sch = get_cosine_schedule_with_warmup(
-                    opt,
-                    num_warmup_steps=self.train_batches,
-                    num_training_steps=self.train_batches * self.num_epochs)
-            self.sch = sch
-            ret['lr_scheduler'] = {'scheduler': sch, 'interval': 'step'}
-        elif self.lr_scheduler == 'linear_up_down':
+        if self.lr_scheduler == 'linear_up_down':
             lr_sch = np.interp(np.arange(1 + self.num_epochs),
                                [0, 5, self.num_epochs],
                                [0, 1, 0])

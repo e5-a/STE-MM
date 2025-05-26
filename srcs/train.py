@@ -7,8 +7,6 @@ from networks import mlp, VGG, resnet20
 from datasets import MNIST, CIFAR10, FMNIST
 from utils.idgenerator import IDGenerator
 import sys
-from IPython.core import ultratb
-sys.excepthook = ultratb.FormattedTB(color_scheme='Linux', call_pdb=False)
 
 
 @hydra.main(version_base=None, config_name='config_train', config_path='../configs')

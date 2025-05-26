@@ -13,5 +13,5 @@ for i in {1..$num_models}; do
     ./scripts/run_train.sh $network $dataset $i
 done
 
-models=`find ./outputs/train -name "*.ckpt" | tail -$num_models | tr "\n" " "`
+models=`find ./outputs/train -name "*.ckpt" | sort -n | tail -$num_models | tr "\n" " "`
 ./scripts/run_perm.sh $network $dataset $fast_wm $method `echo $models`

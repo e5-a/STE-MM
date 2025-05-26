@@ -1,0 +1,4 @@
+name: "MNIST"
+  #input_shape: 784
+input_shape: [1,28,28]
+num_classes: 10

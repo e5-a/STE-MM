@@ -1,0 +1,17 @@
+
+defaults:
+  - rebasin: rebasin
+machine:
+  num_workers: 8
+debug: False
+
+hydra:
+  run:
+    dir: outputs/rebasin_mult/${now:%Y%m%d}T${now:%H%M%S}-${experiment_id}
+  sweep:
+    dir: outputs/rebasin_mult/${now:%Y%m%d}T${now:%H%M%S}-${experiment_id}
+    subdir: ${hydra.job.num}
+
+experiment_id: "${experiment_id:}"
+
+

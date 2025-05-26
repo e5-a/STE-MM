@@ -1,0 +1,17 @@
+
+defaults:
+  - train: params
+machine:
+  num_workers: 8
+debug: False
+
+hydra:
+  run:
+    dir: outputs/train/${now:%Y%m%d}T${now:%H%M%S}-${experiment_id}
+  sweep:
+    dir: outputs/train/${now:%Y%m%d}T${now:%H%M%S}-${experiment_id}
+    subdir: ${hydra.job.num}
+
+experiment_id: "${experiment_id:}"
+
+

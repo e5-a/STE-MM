@@ -1,0 +1,6 @@
+name: VGG
+vgg_name: 'VGG11'
+input_shape: ${..dataset.input_shape}
+num_classes: ${..dataset.num_classes}
+w: 1
+norm_layer: 'bn'

@@ -1,0 +1,8 @@
+targets: null
+seed: 1
+dataset: MNIST
+network: mlp
+fast_wm: True
+
+defaults:
+  - method: wm

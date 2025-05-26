@@ -1,0 +1,5 @@
+name: mlp
+input_shape: ${..dataset.input_shape}
+num_classes: ${..dataset.num_classes}
+bias: True
+w: 1

@@ -1,0 +1,5 @@
+name: resnet20
+num_classes: ${..dataset.num_classes}
+w: 1
+norm_layer: 'bn'
+input_shape: ${..dataset.input_shape}

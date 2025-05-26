@@ -1,0 +1,3 @@
+name: resnet50
+num_classes: ${..dataset.num_classes}
+w: 1

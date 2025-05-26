@@ -1,0 +1,3 @@
+name: "FMNIST"
+input_shape: [1, 28, 28]
+num_classes: 10

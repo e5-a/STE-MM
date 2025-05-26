@@ -1,0 +1,3 @@
+name: "imagenet"
+input_shape: [3, 256, 256]
+num_classes: 1000
